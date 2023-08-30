@@ -1,8 +1,9 @@
 <template>
 <!--  <h1>This is {{ id }}</h1>-->
   <div class="post-detailed">
-    <NuxtLink class="btn btn-success" to="/">Go Home</NuxtLink>
+    <NuxtLink class="btn btn-success mb-3" to="/">Go Home</NuxtLink>
     <div class="this-post">
+      <img v-if="post.image !== ''" :src="`${post.image}`" :alt="`${post.title}`">
       <h1>{{post.title}}</h1>
       <span>Created: {{post.date}}</span>
       <hr>

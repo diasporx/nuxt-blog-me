@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 module.exports = {
     css: [
-        'bootstrap/dist/css/bootstrap.min.css'
+        'bootstrap/dist/css/bootstrap.min.css',
+        '~/assets/main.css'
     ]
 }
 //@ts-ignore
