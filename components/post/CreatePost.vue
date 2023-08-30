@@ -74,7 +74,7 @@ const createNewPost = () => {
   z-index: 999;
   top: 0;
   left: 0;
-  background-color: #11111150;
+  background-color: #11111190;
 }
 .form-create-post {
   border-radius: 7px;

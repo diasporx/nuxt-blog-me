@@ -4,7 +4,7 @@
 <!--    <h5 class="mb-3">Add post</h5>-->
     <CreatePost v-if="store.state.popupNewPostActive === true" />
 
-    <h5 class="mb-3">Latest Posts</h5>
+    <h5 class="mb-3">Latest posts: {{store.state.posts.length}}</h5>
     <Posts />
   </div>
 </template>

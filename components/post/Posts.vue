@@ -1,8 +1,10 @@
 <template>
   <div>
 
+    <Pagination/>
+
     <div class="posts">
-      <div v-for="post in store.state.posts" :key="post.id" class="post">
+      <div v-for="post in paginatedPosts" :key="post.id" class="post">
         <div class="image">
           <img v-if="post.image !== ''" :src="`${post.image}`" class="img-thumbnail" :alt="`${post.title}`">
           <div v-else></div>
@@ -29,8 +31,15 @@
 <script lang="ts" setup>
 import {useStore} from "vuex";
 import {Post} from "~/types";
+import Pagination from "~/components/post/Pagination.vue"
 
 const store = useStore();
+
+const paginatedPosts = computed(() => {
+  const startIndex = (store.state.currentPage - 1) * store.state.postsPerPage;
+  const endIndex = startIndex + store.state.postsPerPage;
+  return store.state.posts.slice(startIndex, endIndex);
+});
 
 const deleteThisPost = (post: Post) => {
   store.dispatch("removePost", post)

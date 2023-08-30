@@ -5,14 +5,18 @@ import nuxtStorage from 'nuxt-storage';
 
 export interface State {
     posts: Post[];
-    popupNewPostActive: boolean
+    popupNewPostActive: boolean,
+    postsPerPage: Number,
+    currentPage: Number,
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
     const store = createStore<State>({
         state: {
             posts: JSON.parse(nuxtStorage.localStorage.getData("posts")) || [],
-            popupNewPostActive: false
+            popupNewPostActive: false,
+            postsPerPage: 3,
+            currentPage: 1,
         },
         mutations: {
             ADD_POST(state, post: Post) {
