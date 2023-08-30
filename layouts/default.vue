@@ -1,12 +1,12 @@
 <template>
-  <main>
+  <div class="main">
     <Header/>
     <div class="content">
       <div class="container">
         <slot/>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 <script>
 import Header from "~/components/Header.vue"
